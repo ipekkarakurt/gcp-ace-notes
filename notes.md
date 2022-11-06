@@ -11,13 +11,13 @@
 - Basic roles do not have enough granularity to account for access to sensitive data.
 - Predefined roles are fine-grained enough to set permissions for specific roles requiring sensitive data access.
 
-# Storage
+## Storage
 - Bigtable provides high-speed reads and writes, accommodates a simple schema, and is cost-effective. Good for IoT.
 -  BigQuery does not provide the high-speed reads and writes required by IoT.
 
-# GKE
+## GKE
 - Autopilot: designed to reduce the operational cost of managing clusters and optimize your clusters for production.
 
-# TODO
+## TODO
 - Cloud Interconnect vs Cloud VPN
 - Bigtable: HBase does not allow ad-hoc queries.
