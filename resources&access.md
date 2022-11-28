@@ -1,4 +1,5 @@
 ## Resource Hierarchy
+
 - resources > projects > folders > organization node
   - organization: company
     - organization roles:

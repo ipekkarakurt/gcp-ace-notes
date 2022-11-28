@@ -1,4 +1,5 @@
 ## Cloud Spanner
+
 - fully managed relational database service
 - **scales horizontally**
 - strongly consistent at global scale

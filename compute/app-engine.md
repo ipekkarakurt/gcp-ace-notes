@@ -1,6 +1,6 @@
 ##App Engine
-fully managed, serverless platform for developing and hosting web applications at scale
-- automatically provision servers & scale app instances based on demand
+
+fully managed, serverless platform for developing and hosting web applications at scale. automatically provision servers & scale app instances based on demand.
 
 ### Standard Environment
 - based on container instances running on Google's infrastructure.
@@ -25,11 +25,8 @@ requirements:
 - VM instances are *restarted on a weekly basis*. During restarts, Google's management services will apply necessary OS and security updates.
 
 ### Standard Environment vs Flexible Environment
-####Standard Environment
-seconds startup time, no SSH, can't write to local disk, supports 3rd party binaries for some languages, use App Engine to make calls to the network, after free tier usage you pay per instance class with automatic shutdown
-
-####Flexible Environment
-minutes startup time, SSH access, use local disk for scratch space (ephemeral-disk initialized on each startup!), supports 3rd party binaries, allows access to network, pay for resource allocation per hour with no automatic shutdown
+- Standard Environment: seconds startup time, no SSH, can't write to local disk, supports 3rd party binaries for some languages, use App Engine to make calls to the network, after free tier usage you pay per instance class with automatic shutdown
+- Flexible Environment: minutes startup time, SSH access, use local disk for scratch space (ephemeral-disk initialized on each startup!), supports 3rd party binaries, allows access to network, pay for resource allocation per hour with no automatic shutdown
 
 gcloud app deploy app.yaml
 

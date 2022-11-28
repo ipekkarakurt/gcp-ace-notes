@@ -1,4 +1,4 @@
-# Load Balancer
+## Load Balancer
 
 - distribute user traffic across multiple instances of an application.
 - load balancing reduces the risk of performance issues.
@@ -68,4 +68,4 @@ cache mode: control the factors that determine whether or not Cloud CDN caches y
     - it's only accessible through internal IP addresses or virtual machine instances in the same region
   - low latency: your internal client requests stay internal to your VPC network and region
 - Internal HTTPS:
-  - proxy-based regional layer 7 load balancer 
+  - proxy-based regional layer 7 load balancer

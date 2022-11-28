@@ -1,4 +1,3 @@
-
 ## Bigtable
 
 NoSQL wide-column database optimized for **heavy reads and writes**. key-value store. designed as a sparsely populated table.

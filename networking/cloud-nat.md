@@ -1,4 +1,5 @@
 ## Cloud NAT (Network Address Translation)
+
 managed network address translation service. provides internet access to private instances (for updates, patching, configuration management etc).
 
 - VM instances without external IP addresses are isolated from external networks. Using Cloud NAT, these instances can access the internet for updates and patches.
