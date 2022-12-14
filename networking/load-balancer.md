@@ -69,3 +69,5 @@ cache mode: control the factors that determine whether or not Cloud CDN caches y
   - low latency: your internal client requests stay internal to your VPC network and region
 - Internal HTTPS:
   - proxy-based regional layer 7 load balancer
+
+https://cloud.google.com/load-balancing/docs/choosing-load-balancer

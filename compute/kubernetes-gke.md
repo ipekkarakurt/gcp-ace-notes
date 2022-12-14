@@ -54,6 +54,8 @@ open source platform for managing containerized workloads and services
   - ClusterIP: Exposes the service on an IP address that is only accessible from within this cluster.
   - NodePort: Exposes the service on the IP address of each node in the cluster, at a specific port number.
   - LoadBalancer: Exposes the service externally, using a load balancing service provided by a cloud provider.
+- For every Service object, the apiserver makes an endpoints resource available.
+  - kubectl get endpoints ${SERVICE_NAME}
 
 ### Kubernetes Controller Objects
 - ReplicaSet: ensures that a population of pods, all identical to one another, are running at the same time.
@@ -91,6 +93,7 @@ consists of Compute Engine instances grouped together to form a cluster
   - accessed by Google Cloud products through internal IP
   - limited outbound access through Private Google Access, which allows them to communicate with other Google Cloud services (nodes can pull container images from Google Container Registry without needing external IP addresses.)
 - In GKE, LoadBalancers give you access to a regional Network Load Balancing configuration by default. To get access to a global HTTP(S) Load Balancing configuration, you can use an Ingress object.
+- Kubernete Engine collects log data written to standard output (STDOUT) and standard error (STDERR).
 
 ### When to use GKE
 -  containerized applications, cloud-native distributed systems, and hybrid applications.

@@ -36,7 +36,7 @@ max unit size: 5 TB per project**
 - Multi-regional buckets can not be changed back to regional.
 - offers directory synchronization: you can sync a VM directory with a bucket.
 - .boto file contains credentials & config for boto library for gsutil. encryption and decryption keys are stored here.
-- Cost: Data ingress is free. 
+- Cost: Data ingress is free.
 
 ### Data transfer into Cloud Storage
 - using gsutil
@@ -68,10 +68,13 @@ gsutil mb gs://<BUCKET_NAME>
 gsutil cp [MY_FILE] gs://[BUCKET_NAME]
 gsutil acl set private gs://$BUCKET_NAME_1/setup.html
 gsutil acl ch -u AllUsers:R gs://$BUCKET_NAME/FILE
+gsutil iam ch allUsers:objectViewer gs://$BUCKET_NAME/FILE
 gsutil lifecycle get gs://$BUCKET_NAME_1
 gsutil lifecycle set life.json gs://$BUCKET_NAME_1
 gsutil versioning get gs://$BUCKET_NAME_1
 gsutil cp -v setup.html gs://$BUCKET_NAME_1 (Copy with versioning)
 gsutil ls -a gs://$BUCKET_NAME_1/setup.html (List all versions of file)
-gsutil rsync -r ./firstlevel gs://$BUCKET_NAME_1/firstlevel
-gsutil ls -r gs://$BUCKET_NAME_1/firstlevel
+gsutil rsync -r ./firstlevel gs://$BUCKET_NAME_1/firstlevel (syncronize content of bucket & directory)
+gsutil ls -r gs://$BUCKET_NAME_1/firstlevel (recursive print)
+gsutil rewrite -s [STORAGE_CLASS] gs://[BUCKET_NAME] (Change storage class)
+gsutil stat gs://BUCKET_NAME/OBJECT_NAME (list metadata)

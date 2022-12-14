@@ -17,6 +17,11 @@
   - two types of quotas: rate quotas and allocation quotas.
     - Rate quotas reset after a specific time.
     - Allocation quotas control the # of resources you can have in your projects.
+- When you create a budget, notifications go to:
+  - Billing admins & users, by default
+  - Email notification channels (max 5, when configured)
+  - PubSub topic (when configured)
+- Billing can be exported to BigQuery only. File export is deprecated.
 
 ## Google recommended practices
 - Assign IAM roles to groups, instead of assigning roles to individuals.
@@ -34,3 +39,4 @@
 - Google Cloud Marketplace lets you quickly deploy functional software packages by providing pre-defined templates with Deploment Manager. Deployment Manager is a Google Cloud service that uses templates written in a combination of YAML, python, and Jinja2 to automate the allocation of Google Cloud resources and perform setup tasks.
 - **Images, snapshots, and networks, are global resources. External IP addresses are regional resources. Instances and disks are zonal resources.**
 - Tags vs labels: Labels are user-defined strings and key-value formats that are used to organize resources and they can propagate true billing. Tags are user-defined strings that are applied to instances only and are mainly used for networking, such as applying firewall rules.
+- Cloud SDK Configuration: default Google Compute Engine zone, verbosity level, usage reporting, project ID, and an active user or service account

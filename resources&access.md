@@ -56,3 +56,4 @@
 - Service account keys are used for accessing private data such as your Pub/Sub truck information from an external environment such as a mobile app running on a phone.
 
 gcloud iam service-accounts keys list --iam-account <EMAIL>
+gcloud iam roles describe [ROLE-ID] (display information about a role)

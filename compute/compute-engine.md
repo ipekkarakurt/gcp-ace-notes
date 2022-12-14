@@ -29,6 +29,7 @@ IaaS solution to create and run VMs.
   - Linux instance: creator has SSH capability and can use the Cloud Console to grant SSH capability to other users. firewall should allow tcp: 22.
   - Windows instance: the creator uses Cloud Console to generate a username and password. anyone who knows the username a password can connect to the instance using a RDP client. firewall should allow tcp: 3389.
 - when a VM is terminated, you are not charged for memory or CPU resources but you are charged for attached disks and reserved IP addresses.
+- guest attributes: a specific type of custom metadata that your applications can write to while running on your virtual machine (VM) instance. When guest attributes are enabled, Compute Engine will store your generated host keys as guest attributes
 - Sole tenancy: physically isolate your workloads from other workloads for compliance requirements
 - Shielded VM: verifiable integrity, defend against rootkits and bootkits.
   - Virtual Trusted Platform Module (vTPM): virtualized trusted platform module, which is a specialized computer chip you can use to protect objects, like keys and certificates.
@@ -118,3 +119,6 @@ IaaS solution to create and run VMs.
 ### When to choose Compute Engine
 - complete control over your infrastructure. customize operating systems and even run applications that rely on a mix of operating systems.
 - easily lift and shift your on premises workloads into GCP without rewriting your applications or making any changes.
+
+gcloud compute instances set-service-account (assigns a service account to a VM instance)
+gcloud compute disks snapshot DISK_NAME (creates snapshots of persistent disks)

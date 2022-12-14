@@ -10,8 +10,11 @@ secure individual private cloud computing model hosted within GCP
   - each VPC network comes with some default routes to route traffic among its subnets and send traffic from eligible instances to the internet.
   - you can create custom static routes to direct some packets to specific destinations. ex: you can create a route that sends all outbound traffic to an instance configured as a NAT gateway.
 - routing tables: forward traffic from one instance to another within the same network, across subnetworks, or even between Google Cloud zones, without requiring an external IP address. built-in so you don’t have to provision or manage a router.
-- VPC Peering: if your company has several Google Cloud projects, and the VPCs need to talk to each other, a relationship between two VPCs can be established to exchange traffic
-- Shared VPC: use the full power of Identity Access Management (IAM) to control who and what in one project can interact with a VPC in another.
+- **VPC Peering: allows internal IP address connectivity across two VPC networks regardless of whether they belong to the same project or the same organization.**
+  - interproject connectivity, even if there is no org defined
+- **Shared VPC: allows an organization to connect resources from multiple projects to a common Virtual Private Cloud (VPC) network, so that they can communicate with each other securely and efficiently using internal IPs from that network.**
+  -The shared VPC is hosted in a common project.
+- **Cloud Interconnect: extends your on-premises network to Google's network through a highly available, low latency connection**
 - VPC Flow Logs: Flow Logs are used to track network related findings, tracks the network sent from and received by VM instances.
 - Cloud NAT: Cloud NAT is Google's managed network address translation service. provides internet access to private instances (for updates, patching, configuration management etc).
 - VM instances that only have internal IP addresses (no external IP addresses) can use Private Google Access to reach external IP addresses of Google APIs and services (through the default route (0.0.0.0/0) with a next hop to the default internet gateway). By default, Private Google Access is disabled on a VPC network. Private Google Access is enabled at the subnet level.
@@ -39,6 +42,7 @@ These firewall rules allow ICMP, RDP, and SSH ingress traffic from anywhere (0.0
   - auto mode:
     - default network
     - one subnet per region: subnets use a set of predefined IP ranges with a /20 mask that can expanded to a /16 mask
+    - each subnet is assigned a range of IP addresses that fit within the 10.128.0.0/9 CIDR block
     - regional IP allocation
   - custom mode:
    - no automatic subnet creation
@@ -67,7 +71,9 @@ you can increase the IP address space of any subnet without any workload shutdow
   - Cloud Router: lets other networks and Google VPC exchange route information over the VPN using the border gateway protocol. If you add a new sub net to your google VPC, your on premises network will automatically get roots to it.
 - Direct Peering: not over the internet
   - peering: putting a router in the same public data center as a google point of presence, and using it to exchange traffic between networks.
-- Carrier Peering: used if customer is not already in a point of presence. Gives you direct access from your on premises network, through a service provider's network to google workspace and to google cloud products that can be exposed through one or more public IP addresses.
+  -  Direct Peering provides a direct path from your on-premises network to Google services
+  - enables you to establish a direct peering connection between your business network and Google's edge network and exchange high-throughput cloud traffic.
+- Carrier Peering: used if customer is not already in a point of presence. Gives you direct access from your on premises network, through a service provider's network to Google that can be exposed through one or more public IP addresses.
   - downside: not covered by a Google SLA.
 - Dedicated Interconnect: if getting the highest up times for interconnection is important. allows one or more direct & private connections to Google.
   - can be backed up by VPN for better reliability.
