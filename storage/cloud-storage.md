@@ -1,9 +1,9 @@
 ## Cloud Storage
-HA object storage, strong global consistency
-objects are stored in a packaged format which contains the binary form of the actual data + associated meta-data (such as date created, author, resource type, and permissions) +  globally unique identifier (in the form of URLs).
-used for: serving website content, storing data for archival and disaster recovery, and distributing large data objects to end users via Direct Download.
-**best for: storing immutable blobs larger than 10 MB.
-capacity: petabytes
+HA object storage, strong global consistency\
+objects are stored in a packaged format which contains the binary form of the actual data + associated meta-data (such as date created, author, resource type, and permissions) +  globally unique identifier (in the form of URLs)\
+used for: serving website content, storing data for archival and disaster recovery, and distributing large data objects to end users via Direct Download\
+**best for: storing immutable blobs larger than 10 MB\
+capacity: petabytes\
 max unit size: 5 TB per project**
 
 - not a file system!
