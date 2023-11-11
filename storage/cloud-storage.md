@@ -49,19 +49,19 @@ max unit size: 5 TB per project**
 
 ### Storage Classes
 #### Standard Storage
-best for hot data, stored for brief periods of time
+best for hot data, stored for brief periods of time\
 #### Nearline Storage
-best for infrequent access, (**once per month**).
-min storage duration: 30 days
-ex: data backups, long-tail multimedia content, or data archiving
+best for infrequent access, (**once per month**).\
+min storage duration: 30 days\
+ex: data backups, long-tail multimedia content, or data archiving\
 #### Coldline Storage
-best for infrequent access, (**once per year**).
-min storage duration: 90 days
+best for infrequent access, (**once per year**).\
+min storage duration: 90 days\
 #### Archive Storage
-best for very infrequent access, (**less than once per year**)
-higher costs for data access and operations
-minimum storage duration: 365 days
-ex: data archiving, online backup, and disaster recovery
+best for very infrequent access, (**less than once per year**)\
+higher costs for data access and operations\
+minimum storage duration: 365 days\
+ex: data archiving, online backup, and disaster recovery\
 
 
 gsutil mb gs://<BUCKET_NAME>
